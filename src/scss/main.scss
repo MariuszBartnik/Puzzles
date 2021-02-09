@@ -1,0 +1,22 @@
+@import './custom.scss';
+@import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import './index.scss';
+
+body{
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: $primary-color;
+    background: linear-gradient($primary-color, $secondary-color);
+}
+
+.navbar-logo{
+    height: 3rem;
+}
+
+.navbar-user-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+

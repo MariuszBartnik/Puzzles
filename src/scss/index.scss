@@ -1,0 +1,58 @@
+@import "./mixins.scss";
+
+// Index.html
+.main-logo-img{
+    width: 200px;
+    height: 200px;
+}
+
+.main-logo-text{
+    width: 400px;
+    height: 130px; 
+}
+
+.full-height{
+    height: 100vh;
+}
+// Authenticate.html
+.auth-form-wrapper{
+    height: 60vh;
+}
+
+// Chat room
+.chat-window{
+    height: 70vh;
+    overflow:auto;
+}
+
+//Profile
+#avatar-input{
+    width: .1px;
+    height: .1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profile-avatar-img{
+    width: 150px;
+    height: 150px;
+}
+
+// Game 
+.reloads-alert{
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    left: 5%;
+    z-index: 6;
+
+    @include medium-screen{
+        width: 70%;
+        left: 15%;
+    }
+
+    @include large-screen{
+        width: 50%;
+        left: 25%;
+    }
+}

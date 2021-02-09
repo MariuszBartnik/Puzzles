@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle  Game | Play</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="index.html">
+                <img src="../img/Logo.png" alt="Puzzle logo" class="navbar-logo">
+            </a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle text-light d-flex align-items-end" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="bg-light p-1 rounded-circle">
+                        <img src="../img/user-icon-green.png" class="navbar-user-icon" alt="User">
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end bg-dark p-1">
+                    <a href="ranking.html" class="dropdown-item bg-dark text-light my-3 ">Ranking</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item bg-dark text-light my-3 ">Logout</a>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reloads alert -->
+    <div id="alert-output"></div>
+
+    <!-- Main game div -->
+    <div id="game-stage"></div>
+    
+    <!-- End game modal -->
+    <div class="modal fade" id="game-over-modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content rounded-0">
+            <div class="modal-body">
+              <h2 class="text-center">Game over</h2>
+              <div class="row">
+                <div class="col text-center">
+                  <img src="../img/cup.png" alt="Cup" width="120" height="120">
+                </div>
+                <div class="col align-self-center" id="points-output">
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer bg-dark rounded-0">
+              <button type="button" class="btn btn-light rounded-0" id="restart-game-button">Play again</button>
+              <button type="button" class="btn btn-outline-light rounded-0">Log out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
