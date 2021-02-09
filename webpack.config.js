@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -15,7 +15,10 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ['style-loader', 
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader, 
+                    },
                     'css-loader',
                     {
                         loader: 'postcss-loader',
@@ -27,7 +30,8 @@ module.exports = {
                             }
                         }
                     },
-                    'sass-loader' ]
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
@@ -38,38 +42,41 @@ module.exports = {
             },
             {
                 test: /\.html$/i,
-                use: 'html-loader',
+                loader: 'html-loader',
             }
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'css/styles.css'
+        }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
+            filename: '../index.html',
             template: './src/templates/index.html',
             inject: true,
             chunks: ['main']
         }),
         new HtmlWebpackPlugin({
-            filename: 'login.html',
+            filename: '../login.html',
             template: './src/templates/login.html',
             inject: true,
             chunks: ['main', 'auth']
         }),
         new HtmlWebpackPlugin({
-            filename: 'register.html',
+            filename: '../register.html',
             template: './src/templates/register.html',
             inject: true,
             chunks: ['main', 'auth']
         }),
         new HtmlWebpackPlugin({
-            filename: 'game.html',
+            filename: '../game.html',
             template: './src/templates/game.html',
             inject: true,
             chunks: ['main', 'game']
         }),
         new HtmlWebpackPlugin({
-            filename: 'ranking.html',
+            filename: '../ranking.html',
             template: './src/templates/ranking.html',
             inject: true,
             chunks: ['main', 'ranking']
@@ -77,6 +84,6 @@ module.exports = {
     ],
     output: {
         filename: '[name].bundle.[contentHash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist', "public")
     }
 }
