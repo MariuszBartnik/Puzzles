@@ -1,24 +1,77 @@
+@import './mixins.scss';
+
+.main-logo-img{
+    path:nth-child(1){
+        @include logo-entry-animation(bottom right, 0s);
+    }
+
+    path:nth-child(2){
+        @include logo-entry-animation(bottom left, .75s);
+    }
+
+    path:nth-child(3){
+        @include logo-entry-animation(top left, 1.5s);
+    }
+    
+    path:nth-child(4){
+        @include logo-entry-animation(top right, 2.25s);
+    }
+}
+
+.main-logo-text{
+    path:nth-child(1){
+        @include stroke-animation(673, 0s);
+    }
+    
+    path:nth-child(2){
+        @include stroke-animation(517, .5s);
+    }
+    
+    path:nth-child(3){
+        @include stroke-animation(512, 1s);
+    }
+        
+    path:nth-child(4){
+        @include stroke-animation(512, 1.5s);
+    }
+    
+    path:nth-child(5){
+        @include stroke-animation(369, 2s);
+    }
+    
+    path:nth-child(6){
+        @include stroke-animation(481, 2.5s);
+    }
+        
+    path:nth-child(7){
+        @include stroke-animation(451, 3s);
+    }
+}
+
+.actions{
+    animation: buttons-entry 1.2s ease-out 3s forwards;
+}
+
+.loader{
+    animation: loader-animation 2s ease-out forwards infinite;
+}
+
 @keyframes main-logo-animate{
     0%{
         transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
+        opacity: 0;
     }
     25%{
-        transform: scale(1.05)    ;
-        -webkit-transform: scale(1.05)    ;
-        -moz-transform: scale(1.05)    ;
-        -ms-transform: scale(1.05)    ;
-        -o-transform: scale(1.05)    ;
+        transform: scale(1.05);
+        opacity: .5;
 }
     50%{
         transform: scale(1);
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -ms-transform: scale(1);
-        -o-transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -33,11 +86,25 @@
     }
 }
 
-@keyframes fill-animate{
-    from {
-        fill: transparent;
+@keyframes buttons-entry{
+    from{
+        opacity: 0;
+        transform: translateY(200px);
     }
-    to{ 
-        fill: #266996;
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loader-animation{
+    0%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(180deg);
     }
 }

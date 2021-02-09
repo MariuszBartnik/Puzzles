@@ -1,9 +1,19 @@
 @import "./mixins.scss";
+@import "./animations.scss";
+
+// Navbar
+.navbar-logo{
+    height: 3rem;
+}
+
+.navbar-user-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
 
 // Index.html
-.main-logo-img{
-    width: 200px;
-    height: 200px;
+.main-logo-img path{
+    opacity: 0;
 }
 
 .main-logo-text{
@@ -11,31 +21,13 @@
     height: 130px; 
 }
 
-.full-height{
-    height: 100vh;
+.actions{
+    opacity: 0;
 }
+
 // Authenticate.html
 .auth-form-wrapper{
     height: 60vh;
-}
-
-// Chat room
-.chat-window{
-    height: 70vh;
-    overflow:auto;
-}
-
-//Profile
-#avatar-input{
-    width: .1px;
-    height: .1px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.profile-avatar-img{
-    width: 150px;
-    height: 150px;
 }
 
 // Game 
@@ -56,3 +48,12 @@
         left: 25%;
     }
 }
+
+// Ranking
+// .loader-wrapper{
+//     position: absolute;
+//     width: 100%;
+//     top: 50%; left: 0%;
+//     transform: translateY(-50%);
+//     text-align: center;
+// }
