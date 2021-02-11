@@ -1,11 +1,11 @@
 import Konva from 'konva';
 import Modal from 'bootstrap/js/dist/modal';
+import axios from 'axios';
 import { setBoxSize} from './gameFiles/utils';
 import { createGameBoard, createTopBar, createPuzzlesLayer } from './gameFiles/gameboard';
 import { createRandomPuzzles } from './gameFiles/puzzleElement';
 import { showScore, checkGameboardBoundaries, checkRoomForDroppedPuzzle, checkFullLines, checkRoomForAvailablePuzzles, reloadPuzzles, checkGameOver } from './gameFiles/gameFunctions';
 import reloadImg from '../img/reload-icon.png';
-import { setHighScore } from './ranking';
 
 const navbar = document.querySelector('nav');
 const modal = new Modal(document.querySelector('#game-over-modal'), {backdrop: "static", keyboard: false});
@@ -253,12 +253,26 @@ const loopThroughAvailablePuzzles = () => {
     });
 };
 
+const setHighScore = async () => {
+    if(score > 0) {
+        const currentScore = await axios.get('http://localhost:5000/game/ranking/user-data');
+    
+        if(!currentScore.data.userHighScore){
+            await axios.post('http://localhost:5000/game/ranking/user-data', {newScore: score});
+        }else{
+            if(currentScore.data.userHighScore.score < score){
+                await axios.put('http://localhost:5000/game/ranking/user-data', {newScore: score});
+            }
+        }
+    }
+}
+
 const gameOverHandler = () => {
     const pointsOutput = document.querySelector('#points-output');
     pointsOutput.innerHTML = `${score} points`;
     
+    setHighScore();
     modal.show();
-    setHighScore(score);
 };
 
 // Restart game after game over

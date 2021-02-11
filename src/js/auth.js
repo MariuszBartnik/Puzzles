@@ -27,6 +27,7 @@ const registerUser = async (e) => {
         const auth = await axios.post('http://localhost:5000/auth/register', { email, password});
 
         if(auth.data.errors) displayErrorMessages(auth.data.errors);
+        if(auth.data.user) location.assign('/game/play');
     }
 }
 
@@ -41,6 +42,7 @@ const loginUser = async (e) => {
     const auth = await axios.post('http://localhost:5000/auth/login', { email, password});
 
     if(auth.data.errors) displayErrorMessages(auth.data.errors);
+    if(auth.data.user) location.assign('/game/play');
 }
 
 const resetErrorMessages = () => {
@@ -54,8 +56,16 @@ const resetErrorMessages = () => {
 
 const displayErrorMessages = (errors) => {
     errors.forEach(error => {
-        if(error.path.match(/emailError|passwordError|confirmPasswordError/)){
-            eval(error.path).textContent = error.message;
+        switch(error.path){
+            case 'emailError':
+                emailError.textContent = error.message;
+                break;
+            case 'passwordError':
+                passwordError.textContent = error.message;
+                break;
+            case 'confirmPasswordError':
+                confirmPasswordError.textContent = error.message;
+                break;
         }
     })
 }
