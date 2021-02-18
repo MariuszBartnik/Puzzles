@@ -29,11 +29,5 @@ export const possiblePuzzles = [
     [{x: 0, y: 0}, {x: 0, y: boxSize}, {x: 0, y: boxSize*2}, {x: boxSize, y: boxSize*2}, {x: boxSize*2, y: boxSize*2}],
 
     [{x: boxSize, y: 0}, {x: 0, y: boxSize}, {x: boxSize, y: boxSize}],    
-    [{x: boxSize*2, y: 0}, {x: boxSize*2, y: boxSize}, {x: 0, y: boxSize*2}, {x: boxSize, y: boxSize*2}, {x: boxSize*2, y: boxSize*2}],
-
-    // T shapes - different variants
-    [{x: 0, y: 0}, {x: 0, y: boxSize}, {x: 0, y: boxSize*2}, {x: boxSize, y: boxSize}],
-    [{x: 0, y: boxSize}, {x: boxSize, y: 0}, {x: boxSize, y: boxSize}, {x: boxSize, y: boxSize*2}],
-    [{x: boxSize, y: 0}, {x: 0, y: boxSize}, {x: boxSize, y: boxSize}, {x: boxSize*2, y: boxSize}],
-    [{x: 0, y: 0}, {x: boxSize, y: 0}, {x: boxSize*2, y: 0}, {x: boxSize, y: boxSize}],
+    [{x: boxSize*2, y: 0}, {x: boxSize*2, y: boxSize}, {x: 0, y: boxSize*2}, {x: boxSize, y: boxSize*2}, {x: boxSize*2, y: boxSize*2}]
 ];
