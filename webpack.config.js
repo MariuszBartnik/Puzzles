@@ -10,6 +10,7 @@ module.exports = {
         auth: './src/js/auth.js',
         game: './src/js/game.js',
         ranking: './src/js/ranking.js',
+        buttons: './src/js/buttons.js'
     },
     module: {
         rules: [
@@ -56,7 +57,7 @@ module.exports = {
             filename: 'index.html',
             template: './src/templates/index.html',
             inject: true,
-            chunks: ['main']
+            chunks: ['main', 'buttons']
         }),
         new HtmlWebpackPlugin({
             filename: 'login.html',
@@ -81,6 +82,10 @@ module.exports = {
             template: './src/templates/ranking.html',
             inject: true,
             chunks: ['main', 'ranking']
+        }),
+        new HtmlWebpackPlugin({
+            filename: '404.html',
+            template: './src/templates/404.html'
         })
     ],
     output: {

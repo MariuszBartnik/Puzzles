@@ -13,12 +13,12 @@
 @mixin stroke-animation($path-length, $delay) {
     stroke-dasharray: $path-length;
     stroke-dashoffset: $path-length;
-    animation: stroke-animate .5s ease-out forwards;
+    animation: stroke-animate .3s ease-out forwards;
     animation-delay: $delay;
 }
 
 @mixin logo-entry-animation($origin, $delay) {
-    animation: main-logo-animate 2.5s ease-out forwards;
+    animation: main-logo-animate 1.5s ease-out forwards;
     transform-origin: $origin;
     animation-delay: $delay;
 }

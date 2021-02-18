@@ -6,15 +6,15 @@
     }
 
     path:nth-child(2){
-        @include logo-entry-animation(bottom left, .75s);
+        @include logo-entry-animation(bottom left, .45s);
     }
 
     path:nth-child(3){
-        @include logo-entry-animation(top left, 1.5s);
+        @include logo-entry-animation(top left, .9s);
     }
     
     path:nth-child(4){
-        @include logo-entry-animation(top right, 2.25s);
+        @include logo-entry-animation(top right, 1.35s);
     }
 }
 
@@ -24,32 +24,32 @@
     }
     
     path:nth-child(2){
-        @include stroke-animation(517, .5s);
+        @include stroke-animation(517, .3s);
     }
     
     path:nth-child(3){
-        @include stroke-animation(512, 1s);
+        @include stroke-animation(512, .6s);
     }
         
     path:nth-child(4){
-        @include stroke-animation(512, 1.5s);
+        @include stroke-animation(512, .9s);
     }
     
     path:nth-child(5){
-        @include stroke-animation(369, 2s);
+        @include stroke-animation(369, 1.2s);
     }
     
     path:nth-child(6){
-        @include stroke-animation(481, 2.5s);
+        @include stroke-animation(481, 1.5s);
     }
         
     path:nth-child(7){
-        @include stroke-animation(451, 3s);
+        @include stroke-animation(451, 1.8s);
     }
 }
 
 .actions{
-    animation: buttons-entry 1.2s ease-out 3s forwards;
+    animation: buttons-entry .8s ease-out 1.8s forwards;
 }
 
 .loader{

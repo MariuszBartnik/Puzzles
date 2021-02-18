@@ -209,12 +209,13 @@ const dropPuzzleElement = (puzzleElement, dropCoordinates) => {
     loopThroughAvailablePuzzles();
 
     const fullLines = checkFullLines(gameboardBoxes);
-    const isGameOver = checkGameOver(availablePuzzles, availableReloads);
-
+    
     if(fullLines.length > 0) {
         clearFullLines(fullLines);
     };
-
+    
+    const isGameOver = checkGameOver(availablePuzzles, availableReloads);
+    
     if(isGameOver){
         gameOverHandler();
     } 
